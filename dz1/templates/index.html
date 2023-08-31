@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {{ title }}
+    </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <div class="top_menu">
+        <div class="top_href">
+            <a class="a_top_menu" href="/">Главная</a>
+            <a class="a_top_menu" href="/clothes/">Одежда</a>
+            <a class="a_top_menu" href="/shoes/">Обувь</a>
+            <a class="a_top_menu" href="/jackets/">Куртка</a>
+        </div>
+    </div>
+    <div class="content">
+        {% block content %}
+            <img src="{{ url_for('static', filename='../static/img/main.jpg') }}" alt="main" class="img_content">
+        {% endblock %}
+    </div>
+    <div class="footer">
+        <p class="copyright_text">© 2023 All soon coming.</p>
+        <div class="social_icon">
+            <img src="{{ url_for('static', filename='img/facebook.svg') }}" alt="facebook" class="img_footer">
+            <img src="{{ url_for('static', filename='img/twitter.svg') }}" alt="twitter" class="img_footer">
+            <img src="{{ url_for('static', filename='img/instagram.svg') }}" alt="instagram" class="img_footer">
+        </div>
+    </div>
+</body>
+</html>

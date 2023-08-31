@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+    <img src="{{ url_for('static', filename='../static/img/clothes.jpg') }}" alt="clothes" class="img_content">
+    <!-- <img src="{{ image }}" alt="clothes" class="img_content"> -->
+{% endblock %}
