@@ -8,18 +8,13 @@
 # — Программа должна иметь возможность задавать список URL-адресов через аргументы командной строки.
 # — Программа должна выводить в консоль информацию о времени скачивания каждого изображения и общем времени выполнения программы.
 
-# запуск python app.py -url {имя файла}.py
+# запуск "python app.py m" для - Multiprocessing
+# запуск "python app.py a" для - async
+# запуск "python app.py t" для - Threadings
 
 import os
 import sys
 import argparse
-
-
-# def create_parser():
-#     parser = argparse.ArgumentParser()
-#     parser.add_argument(
-#         "-url", help=" Пример: python app.py -url {имя файла}.py")
-#     return parser
 
 
 urls = [
