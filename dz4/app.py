@@ -15,11 +15,11 @@ import sys
 import argparse
 
 
-def create_parser():
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "-url", help=" Пример: python app.py -url {имя файла}.py")
-    return parser
+# def create_parser():
+#     parser = argparse.ArgumentParser()
+#     parser.add_argument(
+#         "-url", help=" Пример: python app.py -url {имя файла}.py")
+#     return parser
 
 
 urls = [
@@ -31,19 +31,22 @@ urls = [
 ]
 
 if __name__ == "__main__":
+    file_name = ""
     parser = argparse.ArgumentParser()
-    parser.add_argument("-m", nargs="?", help="Multiprocessing")
-    parser.add_argument("-t", help="Threadings")
-    parser.add_argument("-a", help="Async")
+    parser.add_argument(
+        "value", nargs='?', help="Input: python app.py a(for async), t(for threading) ,m(for Multiprocessing)")
     args = parser.parse_args()
-    print(args.m)
-    # match namespace:
-    #     case <pattern_1>:
-    #         <action_1>
-    #     case <pattern_2>:
-    #         <action_2>
-    #     case <pattern_3>:
-    #         <action_3>
-    #     case _:
-    #         <action_wildcard>
-    # os.system(f"python {namespace.url}")
+    # print(args.value)
+    # print(args)
+    match args.value:
+        case "a":
+            file_name = "python async.py"
+        case "t":
+            file_name = "python threadings.py"
+        case "m":
+            file_name = "python multiprocess.py"
+        case _:
+            print("Не верный параметр")
+    # print(file_name)
+    if args.value:
+        os.system(f"{file_name}")
